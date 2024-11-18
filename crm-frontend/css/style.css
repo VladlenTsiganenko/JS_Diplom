@@ -1,0 +1,538 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0 auto;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.container {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  max-width: 100%;
+}
+
+.show-modal {
+  display: block;
+}
+
+.navbar > .container-fluid {
+  -webkit-box-pack: left;
+  -ms-flex-pack: left;
+  justify-content: left;
+}
+
+.logo-link {
+  display: block;
+  max-width: 51px;
+  margin-right: 50px;
+}
+
+.logo-link:focus-visible {
+  border: 0;
+  outline: 0;
+  outline: 2px solid rgba(3, 121, 248, 0.749);
+  outline-offset: 2px;
+}
+
+.top-inp-search {
+  width: 82%;
+  border-radius: 0;
+}
+
+.table-striped {
+  min-height: 300px;
+}
+
+.thead-tr .table-head {
+  color: #b0b0b0;
+}
+
+.table-head {
+  font-family: Open Sans;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0px;
+  text-align: left;
+}
+
+.table-head-ID {
+  background-image: url("../images/arrow_up.svg");
+  background-position: 2em 72%;
+  background-repeat: no-repeat;
+}
+
+.thead-tr .table-head-ID {
+  color: #9873ff;
+}
+
+.table-head-FIO {
+  background-image: url("../images/arrow_A-Я.svg");
+  background-position: 11em 72%;
+  background-repeat: no-repeat;
+}
+
+.table-head-Date-Creation {
+  background-image: url("../images/arrow_down.svg");
+  background-position: 5em 72%;
+  background-repeat: no-repeat;
+}
+
+.table-head-Date-Change {
+  background-image: url("../images/arrow_down.svg");
+  background-position: 6em 72%;
+  background-repeat: no-repeat;
+}
+
+.table-head-contacts,
+.table-head-actions {
+  background-image: none;
+}
+
+.client-tr {
+  --bs-table-striped-bg: transparent;
+}
+
+.btn-primary {
+  max-width: 216px;
+  -ms-flex-item-align: center;
+  -ms-grid-row-align: center;
+  align-self: center;
+  padding: 10px 40px 10px 50px;
+  margin-bottom: 100px;
+  background-color: transparent;
+  font-size: 14px;
+  border: 2px solid #9873ff;
+  border-radius: 0;
+  color: #9873ff;
+  background-image: url("../images/addBtnSvg.svg");
+  background-position: 7% 50%;
+  background-repeat: no-repeat;
+}
+
+.btn-primary:hover:not(:focus-visible) {
+  background-image: url("../images/addBtnSvgHover.svg");
+  --bs-btn-hover-color: rgba(213, 3, 255, 0.687);
+  --bs-btn-hover-border-color: rgba(213, 3, 255, 0.687);
+  --bs-btn-hover-bg: transparent;
+}
+
+.btn-primary:focus-visible {
+  background-image: url("../images/addBtnSvgFocus.svg");
+}
+
+.btn-primary:active:not(:focus-visible) {
+  background-image: url("../images/addBtnSvgActive.svg");
+  --bs-btn-active-color: #bd11e0;
+  --bs-btn-active-border-color: rgb(189, 17, 224);
+  --bs-btn-active-bg: transparent;
+}
+
+tr .ID-td {
+  color: #b0b0b0;
+}
+
+tr .time {
+  margin: 0;
+  padding: 0;
+  color: #b0b0b0;
+}
+
+tr .td {
+  padding-top: 13px;
+}
+
+.btn-light {
+  width: 49%;
+  border: none;
+  background-color: transparent;
+  background-repeat: no-repeat;
+}
+
+.btn-light-edit {
+  background-image: url("../images/edit.svg");
+  background-position: 4% 50%;
+}
+
+.btn-light-delete {
+  background-image: url("../images/delete.svg");
+  background-position: 4% 50%;
+}
+
+.modal {
+  max-width: 600px;
+  height: 578px;
+  max-height: 90vh;
+  position: fixed;
+  top: 18%;
+  left: 50%;
+  overflow-y: auto;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 29px;
+  height: 29px;
+  background-image: url("../images/close_cross.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  cursor: pointer;
+}
+
+.modal__inp {
+  position: relative;
+  border: 0;
+  border-radius: 0;
+  border-bottom: 1px solid #c8c5d1;
+}
+
+.input-wrapper {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.input-wrapper input {
+  padding: 10px;
+  width: 100%;
+}
+
+.input-wrapper label {
+  position: absolute;
+  left: 10px;
+  top: 48%;
+  -webkit-transform: translateY(-20%);
+  -ms-transform: translateY(-20%);
+  transform: translateY(-20%);
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  pointer-events: none;
+}
+
+.input-wrapper input:focus + label,
+.input-wrapper input:valid + label {
+  top: 0px; /* Перемещаем плейсхолдер над полем ввода при фокусе или есливведено значение */
+  font-size: 12px;
+  color: #333;
+}
+
+.purple-star {
+  color: #9873ff;
+}
+
+/* Стили для поля ввода контактов */
+
+.contact-form {
+  width: 100%;
+  margin-bottom: 30px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  background-color: #c8c5d1;
+}
+
+.contct__form-contact-btn {
+  width: 100%;
+  -ms-flex-item-align: center;
+  -ms-grid-row-align: center;
+  align-self: center;
+  border-radius: 0;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 19px;
+  --bs-btn-bg: transparent;
+  --bs-btn-border-color: transparent;
+  background-image: url("../images/add_circled_cross.svg");
+  background-repeat: no-repeat;
+  background-position: 35% center;
+}
+
+.contact-input-wrapper {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.contact-dropdown {
+  /* flex: 1; */
+  margin-right: 10px;
+}
+
+.input-wrapper-with-delete {
+  position: relative;
+  -webkit-box-flex: 2;
+  -ms-flex: 2;
+  flex: 2;
+}
+
+.contact-input {
+  width: 100%;
+  padding-right: 30px;
+}
+
+.delete-contact-btn {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  border: none;
+  border-left: 1px solid grey;
+  border-right: 1px solid grey;
+  background-color: #e2e1e8;
+  background-image: url("../images/grey_circled_cross.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  color: transparent;
+  cursor: pointer;
+}
+
+.btn-success {
+  --bs-btn-bg: #9873ff;
+  -ms-flex-item-align: center;
+  -ms-grid-row-align: center;
+  align-self: center;
+  padding: 10px 40px 10px 50px;
+  background-color: #9873ff;
+  border: 2px solid #9873ff;
+  border-radius: 0;
+  color: #fff;
+}
+
+.top-modal-wrap {
+  padding: 20px;
+}
+
+.delete-modal {
+  max-width: 450px;
+  top: 46%;
+  left: 40%;
+}
+
+.delete-modal-content {
+  padding: 30px 50px;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 0;
+}
+
+.delete-modal-content p {
+  text-align: center;
+}
+
+.delete-modal-butons {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.btn-warning {
+  -ms-flex-item-align: center;
+  -ms-grid-row-align: center;
+  align-self: center;
+  padding: 10px 40px 10px 50px;
+  background-color: #9873ff;
+  border: 2px solid #9873ff;
+  border-radius: 0;
+  color: #fff;
+}
+
+.btn-warning:hover:not(:focus-visible) {
+  --bs-btn-hover-border-color: rgba(213, 3, 255, 0.687);
+  --bs-btn-hover-bg: rgba(213, 3, 255, 0.687);
+}
+
+.btn-warning:active:not(:focus-visible) {
+  --bs-btn-active-border-color: rgb(189, 17, 224);
+  --bs-btn-active-bg: rgb(189, 17, 224);
+}
+
+.delete-delete {
+  margin-bottom: 10px;
+}
+
+.delete-cancel {
+  -ms-flex-item-align: center;
+  -ms-grid-row-align: center;
+  align-self: center;
+  padding: 0;
+  background-color: transparent;
+  border: 0;
+  border-bottom: 1px solid #333;
+  border-radius: 0;
+  color: #333;
+}
+
+.contact-icon {
+  width: 24px;
+  height: 24px;
+  background-size: cover;
+}
+
+.edit-id-span {
+  position: absolute;
+  top: 30px;
+  left: 56%;
+  font-size: 12px;
+  line-height: 16.34px;
+  color: #b0b0b0;
+}
+
+/* серый фон */
+
+.modal-open {
+  overflow: hidden;
+}
+
+#overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+/* спинер загрузки */
+
+.customersTable {
+  position: relative;
+}
+
+.custom-loader {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  top: 40%;
+  left: 50%;
+  background: conic-gradient(
+    #0000 10%,
+    #766df4
+  ); /*
+-webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 16px), #000 0);
+ */
+  -webkit-animation: s3 1s infinite linear;
+  animation: s3 1s infinite linear;
+  z-index: 11;
+}
+@-webkit-keyframes s3 {
+  to {
+    -webkit-transform: rotate(1turn);
+    transform: rotate(1turn);
+  }
+}
+@keyframes s3 {
+  to {
+    -webkit-transform: rotate(1turn);
+    transform: rotate(1turn);
+  }
+}
+
+/* кружок с количеством скрытых контактов */
+
+.contact-more {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  font-size: 12px;
+  border: 2px solid #9873ff;
+  border-radius: 50%;
+}
+
+.contact-icons-td :not(:last-child) {
+  margin-right: 5px;
+}
+
+/* валидация */
+
+.error-message {
+  position: absolute;
+  top: 5px;
+  right: 88px;
+  color: red;
+  pointer-events: none;
+  display: none;
+}
+
+/* прокрутка таблицы */
+/* Стили для
+контейнера таблицы */
+
+.table-container {
+  height: 421px;
+  margin-bottom: 50px;
+  overflow-y: auto;
+  width: 100%;
+  border: 1px solid #ccc;
+}
+
+/* Стили для таблицы */
+
+.table-container table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Стили для
+фиксированных заголовков */
+
+.table-container thead th {
+  position: sticky;
+  top: 0;
+  background-color: #ebf6f9;
+  z-index: 10;
+}
+
+/* Дополнительные стили для таблицы */
+
+.table-head {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 2px solid #ddd;
+}
+
+.td {
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}

@@ -1,0 +1,41 @@
+@media (max-width: 1531px) {
+  .btn-light-edit {
+    width: 100%;
+    padding-left: 30px;
+    text-align: left;
+    background-position: 2% 50%;
+  }
+
+  .btn-light-delete {
+    width: 100%;
+    padding-left: 30px;
+    text-align: left;
+    background-position: 4% 50%;
+  }
+}
+
+@media (max-width: 769px) {
+  .top-inp-search {
+    display: none;
+  }
+
+  .navbar > .container-fluid {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 494px) {
+  .top-modal-wrap {
+    padding: 20px 5px 0px 5px;
+  }
+
+  .edit-id-span {
+    max-width: 90px;
+    top: 25px;
+    left: 69%;
+  }
+
+  .contct__form-contact-btn {
+    background-position: 27% center;
+  }
+}

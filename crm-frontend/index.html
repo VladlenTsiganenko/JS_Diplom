@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/media.css" />
+    <link type="image/x-icon" href="images/fav.png" rel="icon" />
+    <title>CLIENTS</title>
+  </head>
+  <body>
+    <div class="container flex" id="container">
+      <nav class="navbar bg-secondary shadow-lg p-3 mb-5 bg-body-tertiary">
+        <div class="container-fluid">
+          <a href="#" class="logo-link">
+            <img class="logo" src="images/logo.svg" alt="Логотип компании" />
+          </a>
+
+          <input
+            class="form-control me-2 top-inp-search"
+            type="search"
+            aria-label="Введите запрос"
+            placeholder="Введите запрос"
+          />
+        </div>
+      </nav>
+      <h1 class="title">Клиенты</h1>
+
+      <div class="table-container">
+        <table id="customersTable" class="table table-striped">
+          <thead>
+            <tr class="thead-tr">
+              <th class="table-head table-head-ID">ID</th>
+              <th class="table-head table-head-FIO">Фамилия Имя Отчество</th>
+              <th class="table-head table-head-Date-Creation">
+                Дата&nbsp;и&nbsp;время <br />создания
+              </th>
+              <th class="table-head table-head-Date-Change">
+                Последние<br />изменения
+              </th>
+              <th class="table-head table-head-contacts">Контакты</th>
+              <th class="table-head table-head-actions">Действия</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="client-tr"></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="addCustomerForm" class="modal">
+        <div class="modal-content">
+          <div class="top-modal-wrap">
+            <span class="close" id="closeModalBtn"></span>
+            <h2>Новый клиент</h2>
+
+            <div class="input-wrapper">
+              <input
+                id="lastName"
+                type="text"
+                class="form-control modal__inp"
+                required=""
+              />
+              <label for="lastName"
+                >Фамилия <span class="purple-star"><b>*</b></span></label
+              >
+              <div class="error-message" id="lastNameError"></div>
+            </div>
+
+            <div class="input-wrapper">
+              <input
+                id="firstName"
+                type="text"
+                class="form-control modal__inp"
+                required=""
+              />
+              <label for="firstName"
+                >Имя <span class="purple-star"><b>*</b></span></label
+              >
+              <div class="error-message" id="firstNameError"></div>
+            </div>
+
+            <div class="input-wrapper">
+              <input
+                id="middleName"
+                type="text"
+                class="form-control modal__inp"
+                required=""
+              />
+              <label for="middleName">Отчество</label>
+              <div class="error-message" id="middleNameError"></div>
+            </div>
+          </div>
+
+          <div id="contactForm" class="contact-form flex">
+            <!-- Список контактов -->
+            <div id="contactList"></div>
+            <!-- Кнопка "Добавить контакт" -->
+            <button
+              id="addContactBtn"
+              class="btn btn-info contct__form-contact-btn"
+            >
+              Добавить контакт
+            </button>
+          </div>
+
+          <button id="saveBtn" type="button" class="btn btn-success">
+            Сохранить
+          </button>
+          <button id="cancelBtn" type="button" class="btn btn-link">
+            Отмена
+          </button>
+        </div>
+      </div>
+
+      <!-- Модальное окно для добавления клиента -->
+      <div id="addCustomerModal" class="modal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2 class="modal-title">Добавить нового клиента</h2>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body"></div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Отмена
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary"
+                id="saveCustomerBtn"
+              >
+                Сохранить
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        id="editCustomerModal"
+        class="modal edit-modal"
+        style="display: none"
+      >
+        <div class="modal-content">
+          <div class="top-modal-wrap">
+            <span class="close" id="closeEditModalBtn"></span>
+            <h2 class="edit-modal-title">Изменить данные</h2>
+            <span id="edit-id-span" class="edit-id-span"></span>
+
+            <div class="input-wrapper">
+              <input
+                id="editLastName"
+                type="text"
+                class="form-control modal__inp"
+                required=""
+              />
+              <label for="editLastName"
+                >Фамилия <span class="purple-star"><b>*</b></span></label
+              >
+              <div
+                id="editLastNameError"
+                class="error-message"
+                style="color: red; display: none"
+              ></div>
+            </div>
+
+            <div class="input-wrapper">
+              <input
+                id="editFirstName"
+                type="text"
+                class="form-control modal__inp"
+                required=""
+              />
+              <label for="editFirstName"
+                >Имя <span class="purple-star"><b>*</b></span></label
+              >
+              <div
+                id="editFirstNameError"
+                class="error-message"
+                style="color: red; display: none"
+              ></div>
+            </div>
+
+            <div class="input-wrapper">
+              <input
+                id="editMiddleName"
+                type="text"
+                class="form-control modal__inp"
+                required=""
+              />
+              <label for="editMiddleName">Отчество</label>
+              <div
+                id="editMiddleNameError"
+                class="error-message"
+                style="color: red; display: none"
+              ></div>
+            </div>
+          </div>
+
+          <div id="contactEditForm" class="contact-form flex">
+            <div id="contactEditList"></div>
+            <button
+              id="addContactBtnEdit"
+              class="btn btn-info contct__form-contact-btn"
+              style="display: block"
+            >
+              Добавить контакт
+            </button>
+          </div>
+
+          <button id="saveEditBtn" type="button" class="btn btn-success">
+            Сохранить
+          </button>
+
+          <button id="deleteCustomerBtn" type="button" class="btn btn-link">
+            Удалить клиента
+          </button>
+        </div>
+      </div>
+
+      <div id="deleteCustomerModal" class="modal delete-modal">
+        <div class="modal-content delete-modal-content">
+          <span class="close" id="closeDeleteModalBtn"></span>
+          <h2>Удалить клиента</h2>
+          <p>Вы действительно хотите удалить данного&nbsp;клиента?</p>
+          <div class="modal-buttons delete-modal-butons flex">
+            <button
+              type="button"
+              id="deleteConfirmBtn"
+              class="btn btn-warning delete-delete"
+            >
+              Удалить
+            </button>
+            <button
+              type="button"
+              id="deleteCancelBtn"
+              class="btn btn-warning delete-cancel"
+            >
+              Отмена
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <button type="button" class="btn btn-primary" id="addBtn">
+        Добавить клиента
+      </button>
+    </div>
+
+    <div id="overlay"></div>
+
+    <script defer type="module" src="main.js"></script>
+  </body>
+</html>
